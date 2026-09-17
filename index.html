@@ -1,0 +1,428 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>WIB Year in Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f2f1e9;
+    --bg-panel:#e9e7db;
+    --bg-dark:#16294a;
+    --bg-dark-2:#1f3a63;
+    --text:#201f1c;
+    --text-soft:#57544b;
+    --text-on-dark:#f2efe3;
+    --text-on-dark-soft:#b9c2d6;
+    --accent-gold:#d7a13d;
+    --accent-gold-light:#f0c874;
+    --accent-sage:#7c8a6e;
+    --border:rgba(32,31,28,0.12);
+    --border-on-dark:rgba(242,239,227,0.18);
+    --shadow:0 18px 40px -20px rgba(22,41,74,0.35);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#11151d;
+      --bg-panel:#181c26;
+      --bg-dark:#0b1220;
+      --bg-dark-2:#152238;
+      --text:#ece8da;
+      --text-soft:#b6b2a2;
+      --text-on-dark:#f2efe3;
+      --text-on-dark-soft:#b9c2d6;
+      --accent-gold:#e3b45a;
+      --accent-gold-light:#f3cd82;
+      --accent-sage:#96a488;
+      --border:rgba(236,232,218,0.14);
+      --border-on-dark:rgba(242,239,227,0.18);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#11151d;
+    --bg-panel:#181c26;
+    --bg-dark:#0b1220;
+    --bg-dark-2:#152238;
+    --text:#ece8da;
+    --text-soft:#b6b2a2;
+    --text-on-dark:#f2efe3;
+    --text-on-dark-soft:#b9c2d6;
+    --accent-gold:#e3b45a;
+    --accent-gold-light:#f3cd82;
+    --accent-sage:#96a488;
+    --border:rgba(236,232,218,0.14);
+    --border-on-dark:rgba(242,239,227,0.18);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Work Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3{text-wrap:balance;margin:0;}
+  .serif{font-family:"Instrument Serif",Georgia,"Times New Roman",serif;}
+  .wrap{max-width:1080px;margin:0 auto;padding-inline:20px;}
+
+  /* ---- top bar ---- */
+  .topbar{
+    position:sticky;
+    top:env(safe-area-inset-top,0px);
+    z-index:40;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:10px 18px;
+    background:rgba(22,41,74,0.92);
+    backdrop-filter:blur(8px);
+    color:var(--text-on-dark);
+    border-bottom:1px solid var(--border-on-dark);
+  }
+  .topbar .brand{display:flex;align-items:center;gap:9px;font-weight:600;font-size:0.95rem;letter-spacing:0.02em;}
+  .topbar .brand img{width:30px;height:30px;border-radius:50%;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:"Work Sans",sans-serif;font-weight:600;font-size:0.86rem;
+    padding:9px 18px;border-radius:100px;
+    background:var(--accent-gold);color:#221a08;
+    text-decoration:none;border:none;cursor:pointer;
+    transition:background .15s ease, transform .15s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{background:var(--accent-gold-light);transform:translateY(-1px);}
+  .btn-ghost{
+    background:transparent;color:var(--text-on-dark);
+    border:1px solid var(--border-on-dark);
+    padding:8px 16px;
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,0.08);}
+  .topbar .btn{padding:7px 15px;font-size:0.8rem;}
+
+  /* ---- hero ---- */
+  .hero{
+    position:relative;
+    min-height:min(88vh,720px);
+    display:flex;
+    align-items:flex-end;
+    background:#0b1220 url('photos/hero-schoolofbusiness.jpg') center 28%/cover no-repeat;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(11,18,32,0.15) 0%, rgba(11,18,32,0.35) 45%, rgba(11,18,32,0.92) 100%);
+  }
+  .hero-inner{position:relative;z-index:1;padding-block:48px 40px;color:var(--text-on-dark);width:100%;}
+  .eyebrow-tag{
+    display:inline-flex;align-items:center;gap:7px;
+    background:var(--bg-dark);color:var(--text-on-dark);
+    padding:5px 13px 5px 10px;border-radius:5px;
+    font-size:0.72rem;font-weight:600;letter-spacing:0.11em;text-transform:uppercase;
+    border:1px solid var(--border-on-dark);
+  }
+  .eyebrow-tag::before{
+    content:"";width:6px;height:6px;border-radius:50%;
+    background:var(--accent-gold);box-shadow:0 0 6px 1px var(--accent-gold);
+    flex:none;
+  }
+  .hero .eyebrow-tag{margin-bottom:18px;}
+  .hero h1{font-size:clamp(2.6rem,8vw,4.6rem);line-height:0.98;font-weight:400;font-style:italic;}
+  .hero p{max-width:46ch;margin-top:14px;color:var(--text-on-dark-soft);font-size:1.02rem;line-height:1.55;}
+  .hero .actions{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap;}
+
+  /* ---- about ---- */
+  .about{padding-block:64px;}
+  .about-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:44px;align-items:center;}
+  .about h2{font-size:clamp(1.9rem,4vw,2.6rem);font-style:italic;font-weight:400;margin-bottom:16px;}
+  .about p{color:var(--text-soft);line-height:1.7;font-size:1rem;max-width:56ch;}
+  .about-photo{border-radius:10px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--border);}
+  .about-photo img{width:100%;height:100%;object-fit:cover;}
+
+  /* ---- event sections ---- */
+  .event{padding-block:52px;border-top:1px solid var(--border);}
+  .event-head{max-width:62ch;margin-bottom:26px;}
+  .event-head .eyebrow-tag{background:var(--bg-dark);margin-bottom:14px;}
+  .event h3{font-size:clamp(1.7rem,3.6vw,2.3rem);font-weight:400;font-style:italic;margin-bottom:10px;}
+  .event p{color:var(--text-soft);line-height:1.65;font-size:0.98rem;}
+
+  .grid-photos{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+    gap:10px;
+  }
+  .grid-photos button.thumb{
+    padding:0;border:none;background:none;cursor:zoom-in;
+    border-radius:8px;overflow:hidden;position:relative;
+    aspect-ratio:1/1;
+  }
+  .grid-photos button.thumb img{
+    width:100%;height:100%;object-fit:cover;
+    transition:transform .35s ease;
+  }
+  .grid-photos button.thumb:hover img{transform:scale(1.05);}
+  .grid-photos button.thumb:focus-visible{outline:3px solid var(--accent-gold);outline-offset:2px;}
+
+  .feature-photo{
+    border:none;background:none;padding:0;cursor:zoom-in;
+    border-radius:10px;overflow:hidden;box-shadow:var(--shadow);
+    display:block;width:100%;max-width:560px;
+  }
+  .feature-photo img{width:100%;height:auto;display:block;}
+
+  /* ---- join ---- */
+  .join{
+    background:linear-gradient(155deg,var(--bg-dark) 0%,var(--bg-dark-2) 100%);
+    color:var(--text-on-dark);
+    padding-block:72px;
+    text-align:center;
+  }
+  .join .eyebrow-tag{background:rgba(255,255,255,0.08);border-color:var(--border-on-dark);margin-bottom:18px;}
+  .join h2{font-size:clamp(2.1rem,5.4vw,3.2rem);font-weight:400;font-style:italic;margin-bottom:14px;}
+  .join p{max-width:52ch;margin:0 auto;color:var(--text-on-dark-soft);line-height:1.65;font-size:1.02rem;}
+  .join .actions{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .join .contact{margin-top:22px;font-size:0.9rem;color:var(--text-on-dark-soft);}
+  .join .contact a{color:var(--accent-gold-light);text-decoration:underline;text-underline-offset:3px;}
+
+  /* ---- footer ---- */
+  footer{
+    background:var(--bg-dark);color:var(--text-on-dark-soft);
+    padding-block:28px calc(28px + env(safe-area-inset-bottom,0px));
+    text-align:center;font-size:0.82rem;
+  }
+  footer .logo-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px;}
+  footer .logo-row img{width:34px;height:34px;border-radius:50%;}
+  footer strong{color:var(--text-on-dark);}
+
+  /* ---- lightbox ---- */
+  #lightbox{
+    position:fixed;inset:0;z-index:100;
+    background:rgba(8,12,20,0.94);
+    display:none;align-items:center;justify-content:center;
+    padding:24px;padding-top:calc(24px + env(safe-area-inset-top,0px));
+    padding-bottom:calc(24px + env(safe-area-inset-bottom,0px));
+  }
+  #lightbox.open{display:flex;}
+  #lightbox figure{margin:0;max-width:min(92vw,900px);max-height:88vh;display:flex;flex-direction:column;gap:12px;align-items:center;}
+  #lightbox img{max-height:78vh;width:auto;max-width:100%;border-radius:6px;object-fit:contain;}
+  #lightbox figcaption{color:var(--text-on-dark-soft);font-size:0.85rem;text-align:center;}
+  .lb-btn{
+    position:absolute;background:rgba(255,255,255,0.08);border:1px solid var(--border-on-dark);
+    color:var(--text-on-dark);border-radius:50%;width:42px;height:42px;
+    display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.1rem;
+  }
+  .lb-btn:hover{background:rgba(255,255,255,0.18);}
+  #lb-close{top:calc(16px + env(safe-area-inset-top,0px));right:16px;}
+  #lb-prev{left:16px;top:50%;transform:translateY(-50%);}
+  #lb-next{right:16px;top:50%;transform:translateY(-50%);}
+  @media (max-width:640px){
+    #lb-prev,#lb-next{width:36px;height:36px;}
+  }
+
+  @media (max-width:760px){
+    .about-grid{grid-template-columns:1fr;}
+    .about-photo{order:-1;max-width:340px;margin-inline:auto;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .grid-photos button.thumb img{transition:none;}
+    .btn{transition:none;}
+  }
+</style>
+
+<div class="topbar">
+  <div class="brand">
+    <img src="logo.png" alt="WIB logo">
+    <span>AGSM Women in Business</span>
+  </div>
+  <a class="btn" href="#join">Apply to Join</a>
+</div>
+
+<section class="hero">
+  <div class="hero-inner wrap">
+    <span class="eyebrow-tag">UC Riverside · School of Business</span>
+    <h1 class="serif">Grow together.</h1>
+    <p>A look back at a year of AGSM Women in Business — tabling, case comps, guest speakers, and a Halloween movie night we're still talking about.</p>
+    <div class="actions">
+      <a class="btn" href="#join">Apply to Join WIB</a>
+      <a class="btn btn-ghost" href="#year">See the year ↓</a>
+    </div>
+  </div>
+</section>
+
+<section class="about wrap" id="about">
+  <div class="about-grid">
+    <div>
+      <span class="eyebrow-tag">Who we are</span>
+      <h2 class="serif" style="margin-top:14px;">A community dedicated to empowering future leaders.</h2>
+      <p>AGSM Women in Business (WIB) brings together aspiring leaders at UC Riverside for networking, workshops, and events that build real connections. From mentorship meetups to career-building sessions, case practice, and community events, WIB is where members grow their skills and their circle — together.</p>
+    </div>
+    <div class="about-photo">
+      <img src="photos/about-letterboard.jpg" alt="AGSM Women in Business letter board sign with donuts">
+    </div>
+  </div>
+</section>
+
+<div id="year"></div>
+
+<section class="event wrap">
+  <div class="event-head">
+    <span class="eyebrow-tag">Fall Kickoff</span>
+    <h3 class="serif">Meeting members where they were.</h3>
+    <p>We kicked off the year tabling across campus — pins, props, and #girlboss photo-booth signs included — introducing WIB to students discovering the club for the first time.</p>
+  </div>
+  <div class="grid-photos" data-gallery="tabling">
+    <button class="thumb" data-idx="0"><img src="photos/tabling-01.jpg" loading="lazy" alt="WIB tabling booth on campus"></button>
+    <button class="thumb" data-idx="1"><img src="photos/tabling-02.jpg" loading="lazy" alt="Students gathered at WIB tabling event"></button>
+    <button class="thumb" data-idx="2"><img src="photos/tabling-03.jpg" loading="lazy" alt="WIB members at tabling event with pins"></button>
+    <button class="thumb" data-idx="3"><img src="photos/tabling-04.jpg" loading="lazy" alt="Crowd at WIB tabling booth"></button>
+    <button class="thumb" data-idx="4"><img src="photos/tabling-05.jpg" loading="lazy" alt="Photo booth props table"></button>
+    <button class="thumb" data-idx="5"><img src="photos/tabling-06.jpg" loading="lazy" alt="Members posing with girlboss photo booth props"></button>
+  </div>
+</section>
+
+<section class="event wrap">
+  <div class="event-head">
+    <span class="eyebrow-tag">Halloween Movie Night</span>
+    <h3 class="serif">Monster House, and a lot of costumes.</h3>
+    <p>WIB teamed up with SAB for a Halloween Movie Night at the Hillside Garden Terrace — costumes, snacks, a bake sale, and a screening of Monster House to scare away those midterm worries.</p>
+  </div>
+  <div class="grid-photos" data-gallery="halloween">
+    <button class="thumb" data-idx="0"><img src="photos/halloween-01.jpg" loading="lazy" alt="Group in Halloween costumes"></button>
+    <button class="thumb" data-idx="1"><img src="photos/halloween-02.jpg" loading="lazy" alt="Member in bride costume"></button>
+    <button class="thumb" data-idx="2"><img src="photos/halloween-03.jpg" loading="lazy" alt="Member in robe costume"></button>
+    <button class="thumb" data-idx="3"><img src="photos/halloween-04.jpg" loading="lazy" alt="Members in ghost and plaid costumes"></button>
+    <button class="thumb" data-idx="4"><img src="photos/halloween-05.jpg" loading="lazy" alt="Member in deer antler headband"></button>
+    <button class="thumb" data-idx="5"><img src="photos/halloween-06.jpg" loading="lazy" alt="Member in pumpkin head costume"></button>
+    <button class="thumb" data-idx="6"><img src="photos/halloween-07.jpg" loading="lazy" alt="Group wearing SAT letter sweaters"></button>
+  </div>
+</section>
+
+<section class="event wrap">
+  <div class="event-head">
+    <span class="eyebrow-tag">Info Session</span>
+    <h3 class="serif">Kicking off 2025–26.</h3>
+    <p>We opened the year with our Info Session, introducing new and returning members to WIB's 2025–26 leadership team and everything the club had planned for the year ahead.</p>
+  </div>
+  <div class="grid-photos" data-gallery="infosession" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr));">
+    <button class="thumb" data-idx="0" style="aspect-ratio:4/3;"><img src="photos/infosession-01.jpg" loading="lazy" alt="Group photo at the WIB info session"></button>
+    <button class="thumb" data-idx="1" style="aspect-ratio:4/3;"><img src="photos/infosession-02.jpg" loading="lazy" alt="Leadership team slide presented at the info session"></button>
+  </div>
+</section>
+
+<section class="event wrap">
+  <div class="event-head">
+    <span class="eyebrow-tag">She Leads</span>
+    <h3 class="serif">A panel on leading with purpose.</h3>
+    <p>WIB hosted a "She Leads" panel discussion featuring AGSM's Lori Barogian (Director, Graduate Student Success) and Erika Santoyo (Graduate Programs Enrollment Manager), sharing career advice and lessons in leadership with our members.</p>
+  </div>
+  <div class="grid-photos" data-gallery="sheleads" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr));">
+    <button class="thumb" data-idx="0" style="aspect-ratio:4/3;"><img src="photos/sheleads-01.jpg" loading="lazy" alt="Full lecture hall at the She Leads panel discussion"></button>
+    <button class="thumb" data-idx="1" style="aspect-ratio:4/3;"><img src="photos/sheleads-02.jpg" loading="lazy" alt="She Leads panel discussion speakers on screen"></button>
+  </div>
+</section>
+
+<section class="event wrap">
+  <div class="event-head">
+    <span class="eyebrow-tag">Secret Santa</span>
+    <h3 class="serif">Holiday cheer, one gift at a time.</h3>
+    <p>Our winter Secret Santa brought the holiday spirit to WIB — thoughtful gifts, good company, and a table full of surprises to close out the quarter.</p>
+  </div>
+  <button class="feature-photo" data-gallery="santa" data-idx="0">
+    <img src="photos/secretsanta-01.jpg" loading="lazy" alt="Table of Secret Santa gifts">
+  </button>
+</section>
+
+<section class="join" id="join">
+  <div class="wrap">
+    <span class="eyebrow-tag">Get involved</span>
+    <h2 class="serif">Ready to join us?</h2>
+    <p>Whether you're after mentorship, case practice, or just a community of ambitious people in business — there's a place for you at WIB. Applications take two minutes.</p>
+    <div class="actions">
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf0RhcIORkM3sKSVYgHnDDwHi896g-V_8FUjcHambRLfkko1A/viewform?usp=publish-editor" target="_blank" rel="noopener">Apply to Join WIB →</a>
+    </div>
+    <p class="contact">Questions? Reach us at <a href="mailto:agsmwibucr@gmail.com">agsmwibucr@gmail.com</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="logo-row">
+    <img src="logo.png" alt="WIB logo">
+    <strong>AGSM Women in Business</strong>
+  </div>
+  <div>UC Riverside · A. Gary Anderson Graduate School of Management</div>
+</footer>
+
+<div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="lb-btn" id="lb-close" aria-label="Close">✕</button>
+  <button class="lb-btn" id="lb-prev" aria-label="Previous photo">‹</button>
+  <button class="lb-btn" id="lb-next" aria-label="Next photo">›</button>
+  <figure>
+    <img id="lb-img" src="" alt="">
+    <figcaption id="lb-caption"></figcaption>
+  </figure>
+</div>
+
+<script>
+(function(){
+  var galleries = {};
+  document.querySelectorAll('[data-gallery]').forEach(function(el){
+    var name = el.getAttribute('data-gallery');
+    if(!galleries[name]) galleries[name] = [];
+  });
+  document.querySelectorAll('button[data-gallery]').forEach(function(btn){
+    var name = btn.getAttribute('data-gallery');
+    var img = btn.querySelector('img');
+    galleries[name] = galleries[name] || [];
+    galleries[name].push({src: img.getAttribute('src'), alt: img.getAttribute('alt')});
+  });
+
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lb-img');
+  var lbCap = document.getElementById('lb-caption');
+  var curGallery = null, curIdx = 0;
+
+  function openLB(name, idx){
+    curGallery = name; curIdx = idx;
+    render();
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden','false');
+  }
+  function render(){
+    var items = galleries[curGallery];
+    if(!items || !items.length) return;
+    curIdx = (curIdx + items.length) % items.length;
+    var item = items[curIdx];
+    lbImg.src = item.src;
+    lbImg.alt = item.alt || '';
+    lbCap.textContent = item.alt || '';
+    document.getElementById('lb-prev').style.display = items.length > 1 ? 'flex' : 'none';
+    document.getElementById('lb-next').style.display = items.length > 1 ? 'flex' : 'none';
+  }
+  function closeLB(){
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden','true');
+    lbImg.src = '';
+  }
+
+  document.querySelectorAll('button[data-gallery]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var name = btn.getAttribute('data-gallery');
+      var idx = parseInt(btn.getAttribute('data-idx'), 10) || 0;
+      openLB(name, idx);
+    });
+  });
+  document.getElementById('lb-close').addEventListener('click', closeLB);
+  document.getElementById('lb-prev').addEventListener('click', function(){ curIdx--; render(); });
+  document.getElementById('lb-next').addEventListener('click', function(){ curIdx++; render(); });
+  lb.addEventListener('click', function(e){ if(e.target === lb) closeLB(); });
+  document.addEventListener('keydown', function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key === 'Escape') closeLB();
+    if(e.key === 'ArrowLeft'){ curIdx--; render(); }
+    if(e.key === 'ArrowRight'){ curIdx++; render(); }
+  });
+})();
+</script>
+
+</body></html>
